@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রিকশা অটো ভাড়া - আপনার প্রিমিয়াম রাইড সার্ভিস</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Basic Resets & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif; /* Added Hind Siliguri for Bengali text */
+            line-height: 1.7;
+            color: #495057; /* Darker, more sophisticated text color */
+            background-color: #f4f6f8; /* Light, slightly warmer background */
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
+        .container {
+            max-width: 1140px; /* Slightly narrower for better focus */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .section-padding {
+            padding: 90px 0; /* Increased padding for more spacious feel */
+        }
+
+        .bg-light {
+            background-color: #fff; /* White background for content areas */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50; /* Darker heading color */
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif; /* Ensure Bengali headings use this font */
+        }
+
+        h1 {
+            font-size: 3.2em;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.8em;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: #20c997; /* A teal/mint accent color */
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #20c997; /* Teal/mint primary color */
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: #18a277; /* Darker shade on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 20px; /* Increased padding */
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 2em;
+            color: #2c3e50; /* Darker logo color */
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 35px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 7px;
+            color: #555;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 7px;
+            right: 0;
+            background: #20c997;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+            background: #20c997;
+        }
+
+        .nav-links a:hover {
+            color: #20c997;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 28px;
+            height: 3.5px;
+            background-color: #2c3e50;
+            margin: 6px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1551739440-5892c320b199?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover; /* More evocative placeholder */
+            color: #fff;
+            text-align: center;
+            padding: 120px 0; /* Reduced padding */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 55vh; /* Reduced min-height */
+            position: relative;
+        }
+
+      .hero {
+ position: relative;
+ text-align: center;
+ color: #fff;
+ overflow: hidden;
+ padding: 80px 0;
+ display: flex;
+ flex-direction: column; /* লেখাগুলাকে উল্লম্বভাবে সাজানোর জন্য */
+ align-items: center; /* লেখাগুলাকে অনুভূমিকভাবে মাঝখানে আনার জন্য */
+ justify-content: center; /* লেখাগুলাকে উল্লম্বভাবে মাঝখানে আনার জন্য */
+ min-height: 500px; /* প্রয়োজন অনুযায়ী উচ্চতা সেট করুন */
+ background-image: url('Screenshot 2025-05-31 103836.png'); /* আপনার ছবির URL দিন */
+ background-size: cover; /* অথবা contain - আপনার প্রয়োজন অনুযায়ী */
+ background-position: center;
+}
+
+/* যদি আপনার হিরো সেকশনে কোনো ওভারলে থাকে (যেমন হালকা কালো রঙের), তবে সেটা .hero::before দিয়ে করতে পারেন: */
+/ .hero::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.5); /* হালকা কালো রঙের ওভারলে */
+ z-index: 1;
+}
+
+.hero > * { /* হিরোর ভেতরের এলিমেন্টগুলোর z-index বাড়িয়ে ওভারলের উপরে দেখানোর জন্য */
+ z-index: 2;
+ position: relative; /* পজিশনিং কনটেক্সট তৈরি করার জন্য */
+} */
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the entire section */
+            filter: brightness(0.5); /* Dim the image for text readability */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.4); /* Slightly transparent background for text */
+            border-radius: 10px;
+        }
+
+        .hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
+
+        .hero p span {
+            font-weight: bold;
+            color: #fdd835;
+        }
+        /* Services Section */
+        #services {
+            background-color: #f9f9f9; /* Slightly off-white */
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .service-item {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.09);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-item i {
+            font-size: 3.5em;
+            color: #20c997; /* Teal/mint accent color */
+            margin-bottom: 25px;
+        }
+
+        .service-item h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .service-item p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .service-item ul {
+            text-align: left;
+            padding-left: 25px;
+            color: #555;
+            font-size: 1em;
+        }
+
+        .service-item ul li {
+            margin-bottom: 8px;
+        }
+
+        /* How It Works Section */
+        #how-it-works {
+            background-color: #fff;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .step-item {
+            background-color: #f8f9fa; /* Lighter background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .step-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-item i {
+            font-size: 3em;
+            color: #007bff; /* Classic blue for contrast */
+            margin-bottom: 20px;
+        }
+
+        .step-item h3 {
+            font-size: 1.7em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .step-item p {
+            color: #777;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        /* About Us Section */
+        #about {
+            background-color: #f4f6f8;
+        }
+
+        #about .container {
+            max-width: 960px;
+        }
+
+        #about h2::after {
+            background-color: #007bff; /* Different accent for this section */
+        }
+
+        #about p {
+            text-align: center;
+            margin: 0 auto 30px auto;
+            font-size: 1.15em;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #fff;
+        }
+
+        #contact h2::after {
+            background-color: #20c997;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            padding-top: 40px;
+        }
+
+        .contact-info h3 {
+            text-align: left;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #555;
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .contact-info p i {
+            color: #20c997; /* Accent color for icons */
+            margin-right: 18px;
+            font-size: 1.4em;
+            width: 30px; /* Fixed width for consistent alignment */
+        }
+
+        .contact-form {
+            background-color: #f8f9fa; /* Lighter background for form */
+            padding: 45px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.09);
+        }
+
+        .contact-form h3 {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 2.3em;
+            color: #2c3e50;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+            font-size: 1.05em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Inner shadow */
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #20c997;
+            box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.2); /* Soft focus glow */
+            outline: none;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.2em;
+            border-radius: 8px;
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 45px;
+            font-size: 1.3em;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50; /* Darker, richer footer background */
+            color: #f8f9fa; /* Light text */
+            text-align: center;
+            padding: 40px 0;
+            font-size: 1em;
+            border-top: 5px solid #20c997; /* Accent line */
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                background-color: #2c3e50; /* Darker background for mobile menu */
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 70%; /* Wider mobile menu */
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in-out;
+                padding-top: 100px; /* Space for header */
+                z-index: 999;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            }
+
+            .nav-links li {
+                opacity: 0;
+                margin: 30px 0;
+            }
+
+            .nav-links a {
+                color: #fff; /* White links on dark background */
+                font-size: 1.3em;
+            }
+
+            .nav-links.nav-active {
+                transform: translateX(0%);
+            }
+
+            .burger {
+                display: block;
+                z-index: 1001;
+            }
+
+            .hero h1 {
+                font-size: 2.5em; /* Further reduced for small screens */
+            }
+
+            .hero p {
+                font-size: 0.9em; /* Further reduced for small screens */
+            }
+
+            h2 {
+                font-size: 2.2em;
+            }
+
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            .service-grid, .steps-grid, .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .service-item, .step-item, .contact-form {
+                padding: 30px;
+            }
+            .contact-info h3 {
+                text-align: center;
+            }
+            .contact-info p {
+                justify-content: center; /* Center contact info on mobile */
+            }
+        }
+
+        /* Burger Animation */
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-7px, 7px);
+        }
+        .toggle .line2 {
+            opacity: 0;
+        }
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-7px, -7px);
+        }
+
+        /* Nav Link Fade Animation */
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="#" class="logo">পার্থ পরিবহন</a>
+                <ul class="nav-links">
+                    <li><a href="#home">হোম</a></li>
+                    <li><a href="#services">সেবাসমূহ</a></li>
+                    <li><a href="#how-it-works">কার্যপদ্ধতি</a></li>
+                    <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                    <li><a href="#contact">যোগাযোগ</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>সততার সাথে সেবা দেওয়ার এই যাত্রায় আপনাদের ভরসাই আমাদের প্রেরণা</h1>
+                <p>বাংলাদেশে ঝামেলা-মুক্ত এবং নির্ভরযোগ্য রিকশা ও অটো রেন্টাল পরিষেবা উপভোগ করুন। আমরা আপনার প্রতিটি যাত্রার জন্য প্রস্তুত।</p>
+                <a href="#contact" class="btn">এখনই রাইড বুক করুন</a>
+            </div>
+        </section>
+
+        <section id="services" class="section-padding">
+            <div class="container">
+                <h2>আমাদের প্রিমিয়াম সেবাসমূহ</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <i class="fas fa-bicycle"></i>
+                        <h3>এক্সিকিউটিভ রিকশা</h3>
+                        <p>কম দূরত্বের জন্য আরামদায়ক এবং কার্যকরী রাইড, দ্রুত, স্থানীয় যাতায়াত এবং কিছুটা আরামের জন্য আদর্শ।</p>
+                        <ul>
+                            <li>ঘন্টা ও দৈনিক ভাড়া উপলব্ধ</li>
+                            <li>স্থানীয় ট্রিপ</li>
+                            <li>নির্ভরযোগ্য পিক-আপ সার্ভিস</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-auto-rickshaw"></i>
+                        <h3>ডিলাক্স অটো-রিকশা</h3>
+                        <p>দ্রুত, আরও প্রশস্ত এবং শহরজুড়ে ভ্রমণের জন্য বা যখন আপনার দ্রুত, সরাসরি রাইড প্রয়োজন তখন এটি উপযুক্ত। ২৪/৭ উপলব্ধ।</p>
+                        <ul>
+                            <li>স্বচ্ছ ভাড়া</li>
+                            <li>আন্তঃ-এলাকা ভ্রমণ</li>
+                            <li>কাস্টম রুট অপশন</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-shuttle-van"></i>
+                        <h3>ফ্যামিলি ইজিবাইক</h3>
+                        <p>পরিবার বা ছোট গ্রুপের জন্য একটি পরিবেশ-বান্ধব এবং আরামদায়ক বিকল্প। অবসর ভ্রমণের জন্য একটি মসৃণ, শান্ত রাইড উপভোগ করুন।</p>
+                        <ul>
+                            <li>গ্রুপের জন্য আরামদায়ক আসন</li>
+                            <li>পরিবেশ-বান্ধব ভ্রমণ</li>
+                            <li>অবসর ও দর্শনীয় স্থান পরিদর্শন</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section-padding bg-light">
+            <div class="container">
+                <h2>৩টি ধাপে সহজ বুকিং</h2>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <i class="fas fa-car-side"></i>
+                        <h3> আপনার গাড়ি নির্বাচন করুন</h3>
+                        <p>আপনার যাত্রা এবং পছন্দ অনুযায়ী রিকশা, অটো-রিকশা বা ইজিবাইকের পরিসর থেকে নির্বাচন করুন।</p>
+                    </div>
+                    <div class="step-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3> বিস্তারিত ও রুট দিন</h3>
+                        <p>আপনার কাঙ্ক্ষিত পিকআপ স্থান, গন্তব্য এবং যেকোনো নির্দিষ্ট প্রয়োজনীয়তা প্রদান করুন।</p>
+                    </div>
+                    <div class="step-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3> নিশ্চিত করুন ও যাত্রা শুরু করুন!</h3>
+                        <p>তাৎক্ষণিক নিশ্চিতকরণ পান এবং আপনার পেশাদার চালক আপনার পথে থাকবে।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padding">
+            <div class="container">
+                <h2>রিকশা অটো রেন্টাল সম্পর্কে</h2>
+                <p>**পার্থ পরিবহনে**-এ আপনাকে স্বাগতম, যেখানে আমরা বাংলাদেশের শহুরে যাতায়াতের নতুন সংজ্ঞা দিই। আমাদের অঙ্গীকার হল প্রতিটি প্রয়োজনের জন্য **প্রিমিয়াম, নির্ভরযোগ্য এবং নিরাপদ পরিবহন সমাধান** প্রদান করা। গ্রাহক সন্তুষ্টির উপর জোর দিয়ে, আমরা নিশ্চিত করি যে আমাদের ফ্লিট নিখুঁতভাবে রক্ষণাবেক্ষণ করা হয় এবং আমাদের চালকরা অভিজ্ঞ পেশাদার – বিনয়ী, সময়নিষ্ঠ এবং স্থানীয় রুট সম্পর্কে বিশেষজ্ঞ।</p>
+                <p>শহরের এপার-ওপার দ্রুত ভ্রমণের জন্য বা পরিবারের জন্য আরামদায়ক রাইডের জন্য, আমরা অতুলনীয় সুবিধা এবং মানসিক শান্তি প্রদান করি। আপনার ভ্রমণের অভিজ্ঞতাকে **প্রতিবারই সহজ এবং আনন্দদায়ক** করতে আমরা নিবেদিত।</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding bg-light">
+            <div class="container">
+                <h2>আমাদের সাথে যোগাযোগ করুন</h2>
+                <p class="contact-intro">আপনার কোনো প্রশ্ন আছে বা আপনার পরবর্তী রাইড বুক করতে প্রস্তুত? আমরা ২৪/৭ আপনাকে সহায়তা করতে প্রস্তুত!</p>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>আমাদের যোগাযোগের বিবরণ</h3>
+                        <p><i class="fas fa-phone-alt"></i> **ফোন:** 01714233028</p>
+                        <p><i class="fas fa-envelope"></i> **ইমেইল:** mokbulhossen0001@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> **ঠিকানা:** সিংড়া পৌরসভার পাশে, সিংড়া বাসস্ট্যান্ড, সিংড়া, নাটোর </p>
+                    </div>
+                    <form class="contact-form">
+                        <h3>আমাদের বার্তা পাঠান</h3>
+                        <input type="text" placeholder="আপনার সম্পূর্ণ নাম" required>
+                        <input type="email" placeholder="আপনার ইমেইল ঠিকানা" required>
+                        <input type="text" placeholder="আপনার জিজ্ঞাসার বিষয়">
+                        <textarea placeholder="আপনার বার্তা এখানে..." rows="6"></textarea>
+                        <button type="submit" class="btn">বার্তা পাঠান</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Partho Poribohon. All rights reserved. Powered by <a href=https://khpartho.github.io/me/>KH Partho</a>.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+
+                // Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+
+                // Burger Animation
+                burger.classList.toggle('toggle');
+            });
+
+            // Close nav when a link is clicked (for smooth scrolling)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav.classList.contains('nav-active')) {
+                        nav.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                        navLinks.forEach(item => item.style.animation = ''); // Reset animation
+                    }
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
